@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Veste Mais BH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+</head>
+<body class="dashboard-body">
+  <header class="admin-header">
+    <div class="admin-header-container">
+      <div class="admin-logo">
+        <img src="images/logo.png" alt="Veste Mais BH">
+        <span>Dashboard</span>
+      </div>
+      <div class="admin-nav">
+        <button id="logoutBtn" class="logout-button">Sair</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <div class="admin-container">
+      <div class="admin-sidebar">
+        <nav class="admin-menu">
+          <ul>
+            <li class="active"><a href="#" data-section="catalog-management">Gerenciar Catálogo</a></li>
+          </ul>
+        </nav>
+      </div>
+      
+      <div class="admin-content">
+        <section id="catalog-management" class="admin-section active">
+          <div class="section-header">
+            <h2>Gerenciar Catálogo</h2>
+            <button id="addNewItemBtn" class="add-item-button">Adicionar Nova Peça</button>
+          </div>
+          
+          <div class="items-container" id="adminItemsContainer">
+            <!-- Items will be loaded here via JavaScript -->
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Add New Item Modal -->
+  <div id="addItemModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Adicionar Nova Peça</h2>
+        <span class="close-modal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <form id="addItemForm">
+          <div class="form-group">
+            <label for="itemName">Nome da Peça</label>
+            <input type="text" id="itemName" required>
+          </div>
+          <div class="form-group">
+            <label for="itemDescription">Descrição</label>
+            <textarea id="itemDescription" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="itemImage">URL da Imagem</label>
+            <input type="url" id="itemImage" required placeholder="https://exemplo.com/imagem.jpg">
+            <p class="form-hint">Use uma URL de uma imagem já hospedada online</p>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="cancel-button close-modal">Cancelar</button>
+            <button type="submit" class="save-button">Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
